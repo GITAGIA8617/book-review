@@ -1,0 +1,13 @@
+<div *ngIf="book" class="book-details">
+    <h2>{{ book.title }}</h2>
+    <p>by {{ book.author }}</p>
+    <img [src]="book.coverImage" alt="{{ book.title }} cover" />
+    <p>Average Rating: {{ book.averageRating | number: '1.1-1' }} / 5</p>
+    
+    <h3>Reviews</h3>
+    <div *ngFor="let review of book.reviews">
+      <p><strong>{{ review.username }}</strong>: {{ review.comment }} (Rating: {{ review.rating }} / 5)</p>
+    </div>
+  
+    <app-review-form (newReview)="addReview($event)"></app-review-form>
+  </div>

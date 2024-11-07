@@ -1,0 +1,21 @@
+<div class="review-form">
+    <h3>Add a Review</h3>
+    <form (ngSubmit)="submitReview()">
+      <label for="username">Your Name</label>
+      <div><input id="username" [(ngModel)]="username" name="username" required /></div><br>
+  
+      <div><label for="rating">Rating</label></div><br>
+      <select id="rating" [(ngModel)]="rating" name="rating" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+  
+      <label for="comment">Comment</label>
+      <textarea id="comment" [(ngModel)]="comment" name="comment" required></textarea>
+  
+      <button type="submit">Submit Review</button>
+    </form>
+  </div>
